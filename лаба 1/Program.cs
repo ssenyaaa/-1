@@ -24,3 +24,4 @@ Console.WriteLine("------------------------------------------ ");
 MyBook.TakeBook("Анна Смит");
 Console.WriteLine($"Статус после взятия: {MyBook.Status}");
 Console.WriteLine($"Доступность: {MyBook.IsAvailable}");
+//
