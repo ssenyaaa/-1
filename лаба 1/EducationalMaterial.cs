@@ -7,7 +7,7 @@ namespace лаба_1
         private string title;
         private string author;
 
-        // Конструктор
+        
         public EducationalMaterial(string title, string author)
         {
             Title = title;

@@ -11,7 +11,7 @@ namespace лаба_1
         private int pageCount;      
         private string isbn;
         
-        private string nameBook;
+        
         
         private int yearBook;
         private bool isAvailable;
@@ -46,11 +46,11 @@ namespace лаба_1
             set { isbn = value; }
         }
 
-        public string NameBook
-        {
-            get { return nameBook; }
-            set { nameBook = value; }
-        }
+        //public string NameBook
+        //{
+        //    get { return nameBook; }
+        //    set { nameBook = value; }
+        //}
         //public string Author
         //{
         //    get { return author; }
@@ -98,12 +98,12 @@ namespace лаба_1
             {
                 isAvailable = false;
                 Status = "Выдана";
-                Console.WriteLine($"Книга \"{nameBook}\" успешно выдана читателю {person}!");
+                Console.WriteLine($"Книга \"{Title}\" успешно выдана читателю {person}!");
 
             }
             else
             {
-                Console.WriteLine($"Книга \"{nameBook}\" сейчас недоступна ");
+                Console.WriteLine($"Книга \"{Title}\" сейчас недоступна ");
             }
         }
 
@@ -113,11 +113,11 @@ namespace лаба_1
             {
                 isAvailable = true;
                 Status= "Доступна";
-                Console.WriteLine($"Книга \"{nameBook}\" успешно возвращена читателем {person}!");
+                Console.WriteLine($"Книга \"{Title}\" успешно возвращена читателем {person}!");
             }
             else
             {
-                Console.WriteLine($"Книга \"{nameBook}\" уже находится в библиотеке. ");
+                Console.WriteLine($"Книга \"{Title}\" уже находится в библиотеке. ");
             }
         }
         
