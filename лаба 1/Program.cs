@@ -1,26 +1,18 @@
-﻿
-using лаба_1;
+﻿using лаба_1;
+using System;
 
-Book MyBook = new Book()
+
+EducationalMaterial[] materials = new EducationalMaterial[]
 {
-    ISBN = "978-5-699-12014-7",
-    NameBook = "Война и мир",
-    Author = "Лев Толстой",
-    Year = 1869,
-    IsAvailable = true,
-    Status = "Доступна"
-
+    new Book("Война и мир", "Лев Толстой", 1300, "978-5-699-12014-7"),
+    new VideoCourse("Основы C#", "Иван Иванов", 360, "https://youtube.com/csharp-basics"),
+    new Article("Новые методы ООП", "Петр Петров", "Программист", 2023),
+    new Book("Преступление и наказание", "Федор Достоевский", 672, "978-5-17-123456-7")
 };
 
-Console.WriteLine($"ISBN книги: {MyBook.ISBN}");
-Console.WriteLine($"Название книги: {MyBook.NameBook}");
-Console.WriteLine($"Автор книги: {MyBook.Author}");
-Console.WriteLine($"Год издания: {MyBook.Year}");
-Console.WriteLine($"Доступность: {MyBook.IsAvailable}");
-Console.WriteLine($"Статус: {MyBook.Status}");
-
-
-
-MyBook.TakeBook("Анна");
-Console.WriteLine($"Статус после взятия: {MyBook.Status}");
-Console.WriteLine($"Доступность: {MyBook.IsAvailable}");
+Console.WriteLine("\nОбработка учебных материалов через массив EducationalMaterial[]");
+foreach (EducationalMaterial material in materials)
+{
+    material.DisplayContent(); 
+    Console.WriteLine();
+}

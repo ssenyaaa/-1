@@ -5,15 +5,41 @@ using System.Text;
 
 namespace лаба_1
 {
-    internal class Book
+    public class Book: EducationalMaterial
+    
     {
+        private int pageCount;      
         private string isbn;
+        
         private string nameBook;
-        private string author;
+        
         private int yearBook;
         private bool isAvailable;
         private string status;
 
+
+        public Book()
+            : base("","")  
+        {
+            PageCount =0;
+            ISBN = "";
+        }
+
+        public Book(string title, string author, int pageCount, string isbn)
+       : base(title, author)
+        {
+            this.pageCount = pageCount;
+            this.isbn = isbn ?? "";
+            this.yearBook = 0;
+            this.isAvailable = false;
+            this.status = "Доступна";
+        }
+
+        public int PageCount
+        {
+            get { return pageCount; }
+            set { pageCount = value; }
+        }
         public string ISBN
         {
             get { return isbn; }
@@ -25,11 +51,11 @@ namespace лаба_1
             get { return nameBook; }
             set { nameBook = value; }
         }
-        public string Author
-        {
-            get { return author; }
-            set { author = value; }
-        }
+        //public string Author
+        //{
+        //    get { return author; }
+        //    set { author = value; }
+        //}
 
         public int Year
         {
@@ -49,6 +75,23 @@ namespace лаба_1
             set { status = value; }
         }
 
+
+        public override void ShowBasicInfo()
+        {
+            base.ShowBasicInfo(); 
+            Console.WriteLine($"Тип: Книга");
+            Console.WriteLine($"Страниц: {PageCount}");
+            Console.WriteLine($"ISBN: {ISBN}");
+        }
+
+        
+        public override void DisplayContent()
+        {
+            Console.WriteLine($"Содержание книги '{Title}'");
+            Console.WriteLine($"Откройте книгу на странице 1 и начните читать...");
+            Console.WriteLine($"Всего страниц: {PageCount}");
+            
+        }
         public void TakeBook(string person)
         {
             if (isAvailable== true)
@@ -80,4 +123,3 @@ namespace лаба_1
         
     }
 }
-//лаба2
